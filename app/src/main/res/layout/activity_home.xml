@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.HomeActivity">
+
+    <TextView
+        android:id="@+id/titleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Hello World!"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/itemsRv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/titleTv"
+        />
+
+    <view
+        android:id="@+id/viewSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:layout_constraintTop_toBottomOf="@id/itemsRv"
+        />
+
+    <TextView
+        android:id="@+id/totalTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TOTAL"
+        app:layout_constraintTop_toBottomOf="@id/viewSeparator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/valueTv"/>
+
+    <TextView
+        android:id="@+id/valueTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/totalTv"
+        app:layout_constraintTop_toBottomOf="@id/viewSeparator"
+        tools:text="R$24,15" />
+
+    <TextView
+        android:id="@+id/subTotalTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="subtotal"
+        app:layout_constraintTop_toBottomOf="@id/totalTv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/valueTv"/>
+
+    <TextView
+        android:id="@+id/subTotalvalueTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/subTotalTv"
+        app:layout_constraintTop_toBottomOf="@id/valueTv"
+        tools:text="R$34,15" />
+
+    <TextView
+        android:id="@+id/shippingTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="shipping"
+        app:layout_constraintTop_toBottomOf="@id/subTotalTv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/valueTv"/>
+
+    <TextView
+        android:id="@+id/shippingValueTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/shippingTv"
+        app:layout_constraintTop_toBottomOf="@id/subTotalvalueTv"
+        tools:text="R$34,15" />
+
+    <TextView
+        android:id="@+id/taxTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tax"
+        app:layout_constraintTop_toBottomOf="@id/shippingTv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/valueTv"/>
+
+    <TextView
+        android:id="@+id/taxValueTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/taxTv"
+        app:layout_constraintTop_toBottomOf="@id/shippingValueTv"
+        tools:text="R$34,15" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
