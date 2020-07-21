@@ -35,11 +35,10 @@ class HomeAdapter(val context: Context, private val item: List<ItemDetail>) : Re
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         fun bind(item: ItemDetail){
-            Glide.with(context).load(item.image_url).into(itemView.itemLogoIv)
-            itemView.itemNameTv.text = item.name
-            itemView.itemPriceTv.text = item.price.toString()
-            itemView.stockItemTv.text = item.stock.toString()
-            itemView.descriptionItemTv.text = item.description
+            Glide.with(context).load(item.image_url).into(itemView.iconItemIv)
+            itemView.iconNameTv.text = item.name
+            itemView.iconPriceTv.text = item.price.toString()
+            itemView.iconStockTv.text = item.stock.toString()
             itemView.itemContainerCl.setOnClickListener { itemClickListener!!.onItemClick(adapterPosition, item) }
         }
     }

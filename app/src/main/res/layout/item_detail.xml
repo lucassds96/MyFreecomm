@@ -32,6 +32,7 @@
         app:layout_constraintTop_toTopOf="@+id/iconNameTv" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/iconStockTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="in stock"
