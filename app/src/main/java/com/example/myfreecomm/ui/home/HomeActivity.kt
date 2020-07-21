@@ -3,6 +3,7 @@ package com.example.myfreecomm.ui.home
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,7 +27,12 @@ class HomeActivity : AppCompatActivity() {
     private fun setObservers() {
         homeViewModel.run {
             homeViewModel.showDetails.observe(this@HomeActivity, Observer { initDetails(it) })
+            homeViewModel.showError.observe(this@HomeActivity, Observer { errorConection(it) })
         }
+    }
+
+    private fun errorConection(it: Throwable?) {
+        Toast.makeText(this, it?.message, Toast.LENGTH_LONG).show()
     }
 
     private fun initDetails(items: List<ItemDetail>) {
