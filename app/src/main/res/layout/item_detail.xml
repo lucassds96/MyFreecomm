@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="15dp"
+    android:id="@+id/itemContainerCl"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iconItemIv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/iconNameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="pencil"
+        app:layout_constraintStart_toEndOf="@id/iconItemIv"
+        app:layout_constraintTop_toTopOf="@id/iconItemIv"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/iconPriceTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="21,45"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iconNameTv" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="in stock"
+        app:layout_constraintBottom_toBottomOf="@+id/iconItemIv"
+        app:layout_constraintStart_toStartOf="@id/iconNameTv"
+        app:layout_constraintTop_toBottomOf="@id/iconNameTv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

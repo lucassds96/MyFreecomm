@@ -20,7 +20,7 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <ImageView
-                android:id="@+id/movieLogoIv"
+                android:id="@+id/itemLogoIv"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:scaleType="fitXY"
@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintTop_toBottomOf="@id/movieLogoIv"
+                app:layout_constraintTop_toBottomOf="@id/itemLogoIv"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
@@ -44,14 +44,14 @@
                     android:orientation="horizontal">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/movieDetailDurationTv"
+                        android:id="@+id/itemNameTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         tools:text="Pencil" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/movieDetailYearTv"
+                        android:id="@+id/itemPriceTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -61,12 +61,13 @@
                 </LinearLayout>
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/movieDetailOverviewTv"
+                    android:id="@+id/stockItemTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="in stock"/>
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/descriptionItemTv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="description"/>
