@@ -1,4 +1,4 @@
-package com.example.myfreecomm.home
+package com.example.myfreecomm.ui.home
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

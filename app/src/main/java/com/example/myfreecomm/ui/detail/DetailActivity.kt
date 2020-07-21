@@ -1,4 +1,4 @@
-package com.example.myfreecomm.details
+package com.example.myfreecomm.ui.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

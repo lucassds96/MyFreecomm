@@ -1,4 +1,4 @@
-package com.example.myfreecomm.home
+package com.example.myfreecomm.ui.home
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myfreecomm.R
-import com.example.myfreecomm.details.DetailActivity
+import com.example.myfreecomm.ui.detail.DetailActivity
 import com.example.myfreecomm.model.ItemDetail
 import kotlinx.android.synthetic.main.activity_home.*
 
@@ -34,7 +34,8 @@ class HomeActivity : AppCompatActivity() {
         itemsRv.layoutManager = LinearLayoutManager(this@HomeActivity, LinearLayoutManager.VERTICAL, false)
         itemsRv.adapter = adapterDetail
 
-        adapterDetail.setOnItemClickListener(object: HomeAdapter.ItemClickListener{
+        adapterDetail.setOnItemClickListener(object:
+            HomeAdapter.ItemClickListener {
             override fun onItemClick(position: Int, item: ItemDetail) {
                 val intent = Intent(this@HomeActivity, DetailActivity::class.java)
                 intent.putExtra("details", item)

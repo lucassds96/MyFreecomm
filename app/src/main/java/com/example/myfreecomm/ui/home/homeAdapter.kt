@@ -1,4 +1,4 @@
-package com.example.myfreecomm.home
+package com.example.myfreecomm.ui.home
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myfreecomm.R
 import com.example.myfreecomm.model.ItemDetail
-import kotlinx.android.synthetic.main.activity_detail.view.*
 import kotlinx.android.synthetic.main.item_detail.view.*
 
 class HomeAdapter(val context: Context, private val item: List<ItemDetail>) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
@@ -23,7 +22,7 @@ class HomeAdapter(val context: Context, private val item: List<ItemDetail>) : Re
         this.itemClickListener = itemClickListener
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_detail, parent, false)
         return ViewHolder(view)
@@ -31,7 +30,7 @@ class HomeAdapter(val context: Context, private val item: List<ItemDetail>) : Re
 
     override fun getItemCount(): Int = item.size
 
-    override fun onBindViewHolder(holder: HomeAdapter.ViewHolder, position: Int) = holder.bind(item[position])
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(item[position])
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         fun bind(item: ItemDetail){
