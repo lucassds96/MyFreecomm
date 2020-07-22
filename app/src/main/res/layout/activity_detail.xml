@@ -22,7 +22,7 @@
             <ImageView
                 android:id="@+id/itemLogoIv"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="@dimen/large_margin_horizontal"
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_launcher_background"
                 app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="24dp"
+                android:padding="@dimen/padding_margin"
                 app:layout_constraintTop_toBottomOf="@id/itemLogoIv"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
@@ -49,7 +49,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
+                        android:textSize="@dimen/text_subtitle"
                         tools:text="Pencil" />
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -57,7 +57,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="24sp"
+                        android:textSize="@dimen/text_subtitle"
                         android:textAlignment="textEnd"
                         tools:text="R$21,50"/>
 
@@ -73,7 +73,7 @@
                     android:id="@+id/descriptionItemTv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="@dimen/padding_margin"
                     tools:text="description"/>
 
             </LinearLayout>

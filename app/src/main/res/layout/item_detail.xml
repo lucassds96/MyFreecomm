@@ -8,11 +8,11 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iconItemIv"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
-        android:layout_marginStart="12dp"
+        android:layout_width="@dimen/bt_size"
+        android:layout_height="@dimen/bt_size"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginBottom="@dimen/small_margin"
+        android:layout_marginStart="@dimen/small_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,8 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="pencil"
-        android:textSize="16sp"
-        android:layout_marginStart="12dp"
+        android:textSize="@dimen/text_title"
+        android:layout_marginStart="@dimen/small_margin"
         app:layout_constraintStart_toEndOf="@id/iconItemIv"
         app:layout_constraintTop_toTopOf="@id/iconItemIv"/>
 
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="R$21,45"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="@dimen/small_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/iconNameTv" />
 
