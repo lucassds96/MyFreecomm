@@ -24,6 +24,13 @@ class HomeActivity : AppCompatActivity() {
         setObservers()
     }
 
+    private fun setValues(detail: List<ItemDetail>) {
+        valueTv.text = detail.map { it.price + it.shipping +  it.tax }.sum().toString()
+        subTotalvalueTv.text = detail.map { it.price }.sum().toString()
+        shippingValueTv.text = detail.map { it.shipping }.sum().toString()
+        taxValueTv.text = detail.map { it.tax }.sum().toString()
+    }
+
     private fun setObservers() {
         homeViewModel.run {
             homeViewModel.showDetails.observe(this@HomeActivity, Observer { initDetails(it) })
@@ -39,7 +46,7 @@ class HomeActivity : AppCompatActivity() {
         adapterDetail = HomeAdapter(this, items)
         itemsRv.layoutManager = LinearLayoutManager(this@HomeActivity, LinearLayoutManager.VERTICAL, false)
         itemsRv.adapter = adapterDetail
-
+        setValues(items)
         adapterDetail.setOnItemClickListener(object:
             HomeAdapter.ItemClickListener {
             override fun onItemClick(position: Int, item: ItemDetail) {
