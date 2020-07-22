@@ -10,7 +10,8 @@
         android:id="@+id/titleTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Hello World!"
+        android:text="4 Itens no carrinho"
+        android:padding="12dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,16 +34,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TOTAL"
-        app:layout_constraintTop_toBottomOf="@id/viewSeparator"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/valueTv"/>
+        android:textSize="18sp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toStartOf="@+id/itemsRv"
+        app:layout_constraintTop_toBottomOf="@id/viewSeparator" />
 
     <TextView
         android:id="@+id/valueTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="24dp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/totalTv"
         app:layout_constraintTop_toBottomOf="@id/viewSeparator"
         tools:text="R$24,15" />
 
@@ -51,16 +56,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="subtotal"
-        app:layout_constraintTop_toBottomOf="@id/totalTv"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/valueTv"/>
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/totalTv"
+        app:layout_constraintTop_toBottomOf="@id/totalTv" />
 
     <TextView
         android:id="@+id/subTotalvalueTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/subTotalTv"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/valueTv"
         app:layout_constraintTop_toBottomOf="@id/valueTv"
         tools:text="R$34,15" />
 
@@ -69,16 +74,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="shipping"
-        app:layout_constraintTop_toBottomOf="@id/subTotalTv"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/valueTv"/>
+        app:layout_constraintStart_toStartOf="@+id/totalTv"
+        app:layout_constraintTop_toBottomOf="@id/subTotalTv" />
 
     <TextView
         android:id="@+id/shippingValueTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/shippingTv"
+        app:layout_constraintEnd_toEndOf="@+id/valueTv"
         app:layout_constraintTop_toBottomOf="@id/subTotalvalueTv"
         tools:text="R$34,15" />
 
@@ -87,16 +90,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="tax"
-        app:layout_constraintTop_toBottomOf="@id/shippingTv"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/valueTv"/>
+        app:layout_constraintStart_toStartOf="@+id/totalTv"
+        app:layout_constraintTop_toBottomOf="@id/shippingTv" />
 
     <TextView
         android:id="@+id/taxValueTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/taxTv"
+        app:layout_constraintEnd_toEndOf="@+id/valueTv"
         app:layout_constraintTop_toBottomOf="@id/shippingValueTv"
         tools:text="R$34,15" />
 
