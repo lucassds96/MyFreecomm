@@ -35,7 +35,7 @@ class DetailActivity : AppCompatActivity() {
         val detail = intent.extras.getSerializable("details") as ItemDetail
         itemNameTv.text = detail.name
         itemPriceTv.text = detail.price.toString()
-        stockItemTv.text = detail.stock.toString()
+        stockItemTv.text = getString(R.string.stock_available, detail.stock.toString())
         descriptionItemTv.text = detail.description
         Glide.with(this).load(detail.image_url).into(itemLogoIv)
     }

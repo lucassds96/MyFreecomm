@@ -10,7 +10,7 @@
         android:id="@+id/titleTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="4 Itens no carrinho"
+        android:text="@string/title_description"
         android:padding="@dimen/small_margin"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +33,7 @@
         android:id="@+id/totalTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TOTAL"
+        android:text="@string/total_description"
         android:textSize="18sp"
         android:layout_marginTop="@dimen/padding_margin"
         android:layout_marginStart="@dimen/small_margin"
@@ -55,7 +55,7 @@
         android:id="@+id/subTotalTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="subtotal"
+        android:text="@string/subtotal_description"
         android:layout_marginTop="@dimen/padding_margin"
         app:layout_constraintStart_toStartOf="@+id/totalTv"
         app:layout_constraintTop_toBottomOf="@id/totalTv" />
@@ -73,7 +73,7 @@
         android:id="@+id/shippingTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="shipping"
+        android:text="@string/shipping_description"
         app:layout_constraintStart_toStartOf="@+id/totalTv"
         app:layout_constraintTop_toBottomOf="@id/subTotalTv" />
 
@@ -89,7 +89,7 @@
         android:id="@+id/taxTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="tax"
+        android:text="@string/tax_description"
         app:layout_constraintStart_toStartOf="@+id/totalTv"
         app:layout_constraintTop_toBottomOf="@id/shippingTv" />
 

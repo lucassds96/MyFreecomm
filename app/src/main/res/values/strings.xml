@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MyFreecomm</string>
+    <string name="title_description">4 Itens no carrinho</string>
+    <string name="total_description">TOTAL</string>
+    <string name="subtotal_description">subtotal</string>
+    <string name="shipping_description">shipping</string>
+    <string name="tax_description">tax</string>
+    <string name="stock_available">%1$s em estoque disponível</string>
+
 </resources>
