@@ -1,7 +1,10 @@
 package com.example.myfreecomm.ui.detail
 
+import android.graphics.PorterDuff
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.example.myfreecomm.R
 import com.example.myfreecomm.model.ItemDetail
@@ -12,7 +15,20 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
+        setSupportActionBar(toolbar)
+        setHeader()
         getData()
+    }
+
+    private fun setHeader() {
+        title = ""
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val icon = ContextCompat.getDrawable(this, R.drawable.ic_back)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            icon?.setColorFilter(resources.getColor(R.color.colorWhite, null), PorterDuff.Mode.SRC_IN)
+        }
+        toolbar?.navigationIcon = icon
+        toolbar.setNavigationOnClickListener { finish() }
     }
 
     private fun getData() {
