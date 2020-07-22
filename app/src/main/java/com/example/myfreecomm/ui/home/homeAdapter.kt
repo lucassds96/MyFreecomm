@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 import com.example.myfreecomm.R
 import com.example.myfreecomm.model.ItemDetail
 import kotlinx.android.synthetic.main.item_detail.view.*
@@ -34,7 +36,8 @@ class HomeAdapter(val context: Context, private val item: List<ItemDetail>) : Re
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         fun bind(item: ItemDetail){
-            Glide.with(context).load(item.image_url).into(itemView.iconItemIv)
+            val requestOptions = RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL)
+            Glide.with(context).load(item.image_url).apply(requestOptions).into(itemView.iconItemIv)
             itemView.iconNameTv.text = item.name
             itemView.iconPriceTv.text = item.price.toString()
             itemView.iconStockTv.text = item.stock.toString()
