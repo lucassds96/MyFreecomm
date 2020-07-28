@@ -3,41 +3,38 @@ package com.example.myfreecomm.ui.home
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myfreecomm.di.module.Api
-import com.example.myfreecomm.di.module.NetworkUtils
+import com.example.myfreecomm.di.module.RetrofitClient
 import com.example.myfreecomm.model.ItemDetail
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
 
 class HomeViewModel : ViewModel() {
 
+    var compositeDisposable: CompositeDisposable = CompositeDisposable()
+    lateinit var api: Api
+
     init {
-        getData()
+        getItemsDetail()
     }
 
     var showDetails= MutableLiveData <List<ItemDetail>>()
     var showError = MutableLiveData <Throwable>()
 
-    private fun getData() {
-        val retrofitClient = NetworkUtils
-            .getRetrofitInstance(URL_API)
-        val endpoint = retrofitClient.create(Api::class.java)
-        val callback = endpoint.getItens()
-
-        callback.enqueue(object : Callback<List<ItemDetail>> {
-            override fun onFailure(call: Call<List<ItemDetail>>, t: Throwable) {
-                showError.value = t
-            }
-
-            override fun onResponse(call: Call<List<ItemDetail>>, response: Response<List<ItemDetail>>) {
-                response.body()?.forEach {
-                    showDetails.value = response.body()
-                }
-            }
-        })
+    private fun getItemsDetail(){
+        val retrofit = RetrofitClient.instance
+        api = retrofit.create(Api::class.java)
+        compositeDisposable.add(api.getItens
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe (
+                {showDetails.value = it },
+                {showError.value = it}
+        ))
     }
 
-    companion object {
-        const val URL_API = "https://raw.githubusercontent.com/myfreecomm/desafio-mobile-android/master/api/"
+    public override fun onCleared(){
+        super.onCleared()
+        compositeDisposable.dispose()
     }
 }

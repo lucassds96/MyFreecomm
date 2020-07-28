@@ -59,4 +59,9 @@ class HomeActivity : AppCompatActivity() {
             }
         })
     }
+
+    override fun onStop() {
+        super.onStop()
+        homeViewModel.onCleared()
+    }
 }
